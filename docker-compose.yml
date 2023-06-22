@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+      - ./postgres-init:/docker-entrypoint-initdb.d
+    ports:
+      - 5432:5432
+
+  steampipe:
+    image: ghcr.io/turbot/steampipe:0.20.6
+    env_file: steampipe.env
+    command:
+      - service
+      - start
+      - --foreground
+      - --database-listen
+      - network
+    container_name: steampipe
+    environment:
+      STEAMPIPE_DATABASE_PASSWORD: steampipe
+    volumes:
+      - ./steampipe:/home/steampipe/.steampipe
+    ports:
+      - 9193:9193

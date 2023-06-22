@@ -1,6 +1,6 @@
 # Evidence + Steampipe = 🚀
 
-This repository contains an example of configuring a [Postgres](https://www.postgresql.org/) database and a [Steampipe](https://steampipe.io/) database using `[postgres_fwd](https://www.postgresql.org/docs/14/postgres-fdw.html)` - then exploring it using [Evidence](https://evidence.dev).
+This repository contains an example of configuring a [Postgres](https://www.postgresql.org/) database and a [Steampipe](https://steampipe.io/) database using [`postgres_fwd`](https://www.postgresql.org/docs/14/postgres-fdw.html) - then exploring it using [Evidence](https://evidence.dev).
 
 Steampipe is a postgres-based tool that connects to external APIs and lets you query them with SQL, creating an ergonomic method of getting data from over 100 popular APIs.
 
@@ -19,7 +19,7 @@ Note that the scripts included in this project were tested on Linux, they may wo
    1. They assume they are being run on Linux
       1. This may work on MacOS, if `bash` is installed (`zsh` is the default)
       2. This may work on Windows, if run within `WSL2`
-   2. `bash`, `sudo` and `psql` are installed
+   2. `bash`, `sudo`, `unzip`, `wget`, and `psql` are installed
 
 
 ### Bootstrapping the databases
@@ -49,4 +49,5 @@ Note that the scripts included in this project were tested on Linux, they may wo
 1. Run `npm install`
 2. Run `npm run dev`
 3. Open [http://localhost:3000](http://localhost:3000)
-
+4. [Configure the Database](https://docs.evidence.dev/core-concepts/data-sources/)
+   1. You can use the connection string `postgres://postgres:postgres@localhost:5432/postgres`
