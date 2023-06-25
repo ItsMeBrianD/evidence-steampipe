@@ -1,6 +1,6 @@
 # Evidence + Steampipe Demo
 
-The goal of this example is to show how Steampipe can be connected to a Postgres data to enrich what can be displayed in an Evidence project.
+The goal of this example is to show how Steampipe can be connected to a Postgres database to enrich what can be displayed in an Evidence project.
 
 Steampipe is built on Postgres, and translates SQL to API calls for over 100 popular APIs.  
 Evidence is a Business Intelligence as Code framework, using markdown + sql to make it easy to build rich reports and analyses.
